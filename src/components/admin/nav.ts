@@ -30,8 +30,8 @@ export type NavItem = {
 /** Each entry shows only to people holding the permission behind it. */
 export const NAV: NavItem[] = [
   { section: null, key: "home", href: "/", icon: Home, visible: () => true, built: true },
-  { section: "monitoring", key: "dashboards", href: "/dashboards", icon: LayoutDashboard, visible: (s) => s.hasAny("dashboard.view"), built: false },
-  { section: "monitoring", key: "issues", href: "/issues", icon: TriangleAlert, visible: (s) => s.hasAny("issue.view"), built: false },
+  { section: "monitoring", key: "dashboards", href: "/dashboards", icon: LayoutDashboard, visible: (s) => s.hasAny("dashboard.view"), built: true },
+  { section: "monitoring", key: "issues", href: "/issues", icon: TriangleAlert, visible: (s) => s.hasAny("issue.view"), built: true },
   { section: "setup", key: "org", href: "/org", icon: ListTree, visible: (s) => s.hasGroup("org.manage"), built: true },
   { section: "setup", key: "users", href: "/users", icon: BadgeCheck, visible: (s) => s.hasAny("user.view") || s.hasGroup("user.manage"), built: true },
   { section: "setup", key: "roles", href: "/roles", icon: ShieldCheck, visible: (s) => s.hasGroup("role.manage"), built: true },
