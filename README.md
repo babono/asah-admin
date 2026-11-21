@@ -98,20 +98,23 @@ Follow `features/checklists`:
 
 ## Status
 
-| Page | PRD | |
-| --- | --- | --- |
-| Sign in, shell, home, language switch | F5, F8, R6 | Done |
-| Checklist templates: list, builder (items, positions, brand, failed-item SLA, publish, new version), schedules | A1, A2, A4 | Done |
-| Dashboards with CSV export | S4, S5 | Soon |
-| Issues and audits | S1–S4 | Soon |
-| Positions and levels (departments, positions, levels, reorder, archive) | F2 | Done |
-| Outlets (brands, areas, outlets with location, radius, time zone) | F3 | Done |
-| Users (create, edit, deactivate, CSV import via asah-be `admin-users`) and scoped role grants | F4, R2–R4, R8 | Done |
-| Roles and permissions (permission matrix, custom roles) | R1, R3, R5 | Soon |
-| Learning modules (blocks, video via `lib/video-upload.ts`, quiz, rubric, review), Learning paths | T1–T6 | Soon |
-| Mentor ratings, Audit log, Settings | M7, F9 | Soon |
+Every page in the PRD's admin scope is built:
 
-The Flutter prototype of every page (all the queries each screen needs) is in asah-app's git
-history, commit `f7bbaae`, under `lib/admin/pages/`.
+| Page | PRD |
+| --- | --- |
+| Sign in (phone OTP), shell with permission-gated sidebar, home, EN/ID switch | F5, F8, R6 |
+| Dashboards: group/area scope, KPI tiles vs the 90% target, by-outlet table, weekly trend + table view, escalated issues, CSV export | S4, S5 |
+| Issues and audits: filters, side panel with photos and timeline, assign, accept/reopen (never one's own fix), comments; visit audit results | S1–S4 |
+| Positions and levels | F2 |
+| Users and roles: create via asah-be `admin-users`, edit, deactivate, scoped role grants, CSV import | F4, R2–R4, R8 |
+| Roles and permissions: permission matrix, sensitive permissions marked, custom roles | R1, R3, R5 |
+| Outlets: brands, areas, outlets with location, radius, time zone | F3 |
+| Learning modules: review queue; builder with video (resumable upload), SOP cards, PDFs, quiz + question bank, rubric; submit, approve/request changes, versions | T1–T5 |
+| Learning paths | T6 |
+| Mentor ratings (raters shown only on request; every view logged) | M7 |
+| Checklist templates: builder, positions, failed-item SLA, publish, versions, schedules | A1, A2, A4 |
+| Audit log (with mentor-rater access log), Settings | F9, R5 |
+
+Fixing an issue (with a proof photo) and everything staff do day to day happen in the phone app.
 
 Not yet run against a live Supabase project.

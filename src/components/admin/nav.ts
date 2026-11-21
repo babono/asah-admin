@@ -38,10 +38,10 @@ export const NAV: NavItem[] = [
   { section: "setup", key: "outlets", href: "/outlets", icon: Store, visible: (s) => s.hasGroup("outlet.manage"), built: true },
   { section: "asuh", key: "modules", href: "/modules", icon: MenuSquare, visible: (s) => s.hasGroup("module.author") || s.hasGroup("module.review"), built: true },
   { section: "asuh", key: "paths", href: "/paths", icon: Route, visible: (s) => s.hasGroup("path.manage"), built: true },
-  { section: "asuh", key: "ratings", href: "/ratings", icon: Star, visible: (s) => s.hasGroup("mentor_rating.view_raters"), built: false },
+  { section: "asuh", key: "ratings", href: "/ratings", icon: Star, visible: (s) => s.hasGroup("mentor_rating.view_raters"), built: true },
   { section: "aksi", key: "checklists", href: "/checklists", icon: ClipboardCheck, visible: (s) => s.hasGroup("checklist_template.manage"), built: true },
-  { section: "system", key: "auditLog", href: "/audit-log", icon: History, visible: (s) => s.hasGroup("audit_log.view"), built: false },
-  { section: "system", key: "settings", href: "/settings", icon: SlidersHorizontal, visible: (s) => s.hasGroup("settings.manage"), built: false },
+  { section: "system", key: "auditLog", href: "/audit-log", icon: History, visible: (s) => s.hasGroup("audit_log.view"), built: true },
+  { section: "system", key: "settings", href: "/settings", icon: SlidersHorizontal, visible: (s) => s.hasGroup("settings.manage"), built: true },
 ];
 
 export const visibleNav = (s: Session) => NAV.filter((i) => i.visible(s));
