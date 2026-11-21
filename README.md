@@ -47,6 +47,9 @@ src/
     api.ts                      queries and mutations (React Query + typed Supabase)
     templates-list.tsx          TanStack Table list + create dialog
     template-builder.tsx        settings, positions, items, schedules, publish
+  features/org/                 departments, positions and levels; shared usePositions()
+  features/outlets/             brands, areas, outlets
+  features/users/               users, role grants, spreadsheet import
   components/
     admin/                      shell, nav, page frame, DataTable, form fields, logo
     ui/                         shadcn/ui
@@ -101,8 +104,10 @@ Follow `features/checklists`:
 | Checklist templates: list, builder (items, positions, brand, failed-item SLA, publish, new version), schedules | A1, A2, A4 | Done |
 | Dashboards with CSV export | S4, S5 | Soon |
 | Issues and audits | S1–S4 | Soon |
-| Positions and levels, Outlets | F2, F3 | Soon |
-| Users (create, spreadsheet import via asah-be `admin-users`) and roles | F4, R1–R5 | Soon |
+| Positions and levels (departments, positions, levels, reorder, archive) | F2 | Done |
+| Outlets (brands, areas, outlets with location, radius, time zone) | F3 | Done |
+| Users (create, edit, deactivate, CSV import via asah-be `admin-users`) and scoped role grants | F4, R2–R4, R8 | Done |
+| Roles and permissions (permission matrix, custom roles) | R1, R3, R5 | Soon |
 | Learning modules (blocks, video via `lib/video-upload.ts`, quiz, rubric, review), Learning paths | T1–T6 | Soon |
 | Mentor ratings, Audit log, Settings | M7, F9 | Soon |
 

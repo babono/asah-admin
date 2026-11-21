@@ -12,15 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CLIENT_NAME } from "@/lib/env";
 import { friendlyError } from "@/lib/errors";
+import { toE164 } from "@/lib/phone";
 import { cn } from "@/lib/utils";
-
-/** Indonesian numbers in any common form -> E.164. Same rule as the app and admin-users. */
-function toE164(raw: string) {
-  let d = raw.replace(/\D/g, "");
-  if (d.startsWith("62")) d = d.slice(2);
-  if (d.startsWith("0")) d = d.slice(1);
-  return `+62${d}`;
-}
 
 /** Phone number and one-time code (PRD F5). Accounts are created by HQ, never here. */
 export default function SignInPage() {

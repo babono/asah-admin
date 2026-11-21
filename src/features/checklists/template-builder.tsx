@@ -10,6 +10,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 
 import { DataTable, type AdminColumn } from "@/components/admin/data-table";
+import { IconButton } from "@/components/admin/icon-button";
 import { FormCheckbox, FormInput, FormSelect, FormTextarea } from "@/components/admin/form-fields";
 import { EmptyState, PageHeader, Pill, Section } from "@/components/admin/page";
 import {
@@ -27,7 +28,6 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { FieldDescription, FieldError, FieldLabel } from "@/components/ui/field";
 import { Switch } from "@/components/ui/switch";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { Enums } from "@/lib/database.types";
 import { friendlyError } from "@/lib/errors";
 import { fmtTime } from "@/lib/format";
@@ -644,38 +644,5 @@ function ScheduleDialog({
         </form>
       </DialogContent>
     </Dialog>
-  );
-}
-
-function IconButton({
-  label,
-  onClick,
-  disabled,
-  danger,
-  children,
-}: {
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-  danger?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          aria-label={label}
-          disabled={disabled}
-          onClick={onClick}
-          className={cn(danger && "text-destructive hover:text-destructive")}
-        >
-          {children}
-        </Button>
-      </TooltipTrigger>
-      <TooltipContent>{label}</TooltipContent>
-    </Tooltip>
   );
 }
