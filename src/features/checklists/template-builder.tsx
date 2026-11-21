@@ -34,7 +34,9 @@ import { fmtTime } from "@/lib/format";
 import { useRequiredSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
-import { usePositions, useTemplate, useTemplateActions, type Item, type Schedule, type TemplateDetail } from "./api";
+import { usePositions } from "@/features/org/api";
+
+import { useTemplate, useTemplateActions, type Item, type Schedule, type TemplateDetail } from "./api";
 
 type Actions = ReturnType<typeof useTemplateActions>;
 

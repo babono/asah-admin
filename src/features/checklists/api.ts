@@ -17,7 +17,6 @@ import { useRequiredSession } from "@/lib/session";
 export const keys = {
   all: ["checklists"] as const,
   one: (id: string) => ["checklists", id] as const,
-  positions: ["positions"] as const,
 };
 
 export type Item = Tables<"checklist_items">;
@@ -70,22 +69,6 @@ export function useTemplate(id: string) {
   });
 }
 export type TemplateDetail = NonNullable<ReturnType<typeof useTemplate>["data"]>;
-
-export function usePositions() {
-  const supabase = useSupabase();
-  return useQuery({
-    queryKey: keys.positions,
-    staleTime: 5 * 60_000,
-    queryFn: async () =>
-      unwrap(
-        await supabase
-          .from("positions")
-          .select("id, name, level, departments(name)")
-          .is("archived_at", null)
-          .order("name"),
-      ),
-  });
-}
 
 /** Mutation that refreshes the template and the list, and toasts the outcome. */
 function useTemplateMutation<V, R = unknown>(templateId: string | null, fn: (v: V) => Promise<R>, success?: string) {
